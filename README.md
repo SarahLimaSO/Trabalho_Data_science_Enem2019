@@ -48,7 +48,7 @@ Devido à alta complexidade computacional de alguns modelos (como *Support Vecto
 
 **Solução Adotada:**
 Foi aplicada uma amostragem aleatória controlada (`random_state=42`) para reduzir o conjunto de análise para **100 observações**.
-- Isso permite gerar os gráficos de `summary_plot` em segundos.
+- Isso permite gerar os gráficos de `summary_plot` em minutos.
 - A amostra é estatisticamente suficiente para identificar as tendências globais de importância das variáveis (Feature Importance).
 
 ---
