@@ -52,7 +52,19 @@ Foi aplicada uma amostragem aleatória controlada (`random_state=42`) para reduz
 - A amostra é estatisticamente suficiente para identificar as tendências globais de importância das variáveis (Feature Importance).
 
 ---
+## ⚠️ Observações Técnicas e Limitações
 
+Durante a execução do pipeline de treinamento, é possível que sejam observados avisos de convergência (*ConvergenceWarning*) especificamente no modelo de **Redes Neurais (MLPClassifier)**.
+
+**Justificativa:**
+O algoritmo de otimização estocástica (Adam) requer um número elevado de iterações (`max_iter`) para garantir a convergência absoluta da função de perda. No entanto, aumentar este parâmetro resulta em um crescimento linear no tempo de treinamento.
+
+Considerando:
+1.  O alto custo computacional da validação cruzada aninhada (*Nested Cross-Validation*).
+2.  As limitações de tempo de execução do ambiente (Google Colab).
+3.  O desempenho competitivo já atingido com o limite atual.
+
+Optou-se por manter o limite de **500 iterações**. Embora o aviso indique que o modelo poderia ser refinado com mais tempo, os resultados obtidos (Acurácia/AUC) mostram-se suficientes para a análise comparativa proposta neste trabalho sem inviabilizar a execução do projeto.
 
 
 ## 📊 Estrutura de Diretórios
